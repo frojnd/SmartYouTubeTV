@@ -46,7 +46,6 @@ import com.google.android.exoplayer2.trackselection.TrackSelectionArray;
 import com.google.android.exoplayer2.util.Util;
 import com.liskovsoft.exoplayeractivity.R;
 import com.liskovsoft.sharedutils.helpers.Helpers;
-
 import java.util.Locale;
 
 // NOTE: original file taken from
@@ -59,6 +58,7 @@ import java.util.Locale;
 public final class MyDebugViewHelper implements Runnable, Player.EventListener {
     private static final int REFRESH_INTERVAL_MS = 1000;
     private static final float TEXT_SIZE_SP = 10;
+    private static final String EXO_PLAYER_VERSION =  "2.10.3";
 
     private final SimpleExoPlayer mPlayer;
     private final ViewGroup mDebugViewGroup;
@@ -264,6 +264,7 @@ public final class MyDebugViewHelper implements Runnable, Player.EventListener {
                 counters.droppedBufferCount + counters.skippedOutputBufferCount
                     + "/" +
                     counters.renderedOutputBufferCount);
+        appendRow("Exoplayer version", EXO_PLAYER_VERSION);
     }
 
     private void appendPlayerState() {
