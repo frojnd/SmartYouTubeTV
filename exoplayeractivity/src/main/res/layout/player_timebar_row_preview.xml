@@ -35,7 +35,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="26dp"
-            app:played_color="@color/red"
+            app:played_color="@color/neo_blue"
             app:unplayed_color="@color/white_50"
             app:buffered_color="@color/white"
             app:scrubber_color="@color/white"
