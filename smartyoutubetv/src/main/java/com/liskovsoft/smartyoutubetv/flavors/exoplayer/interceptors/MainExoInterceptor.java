@@ -15,7 +15,7 @@ public class MainExoInterceptor extends RequestInterceptor {
 
     public MainExoInterceptor(Context context) {
         super(context);
-        
+
         mContext = context;
         mDoOnPlayEndInterceptor = new DelayedCommandCallInterceptor(context);
         mExoNextInterceptor = new ExoNextInterceptor(context);
@@ -26,13 +26,19 @@ public class MainExoInterceptor extends RequestInterceptor {
 
     @Override
     public boolean test(String url) {
+        if (url.contains("tv-player")) {
+            mCurrentInterceptor = mCipherInterceptor;
+            return true;
+        }
+
         if (url.contains("get_video_info")) {
             mCurrentInterceptor = mExoInterceptor;
             return true;
         }
 
-        if (url.contains("tv-player")) {
-            mCurrentInterceptor = mCipherInterceptor;
+        if (url.contains("youtube.com/youtubei/v1/next") ||
+                url.contains("youtube.com/youtubei/v1/browse")) {
+            mCurrentInterceptor = mExoNextInterceptor;
             return true;
         }
 
