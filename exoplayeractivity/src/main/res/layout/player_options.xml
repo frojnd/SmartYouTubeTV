@@ -15,6 +15,7 @@
 
     <com.liskovsoft.smartyoutubetv.flavors.exoplayer.widgets.ImageToggleButton
         android:id="@+id/exo_share"
+        android:visibility="gone"
         style="@style/ExoMediaButton2.Share"/>
 
     <com.liskovsoft.smartyoutubetv.flavors.exoplayer.widgets.ImageToggleButton
